@@ -10,13 +10,46 @@ let theta1 = Math.PI / 2; // initial angle of the first pendulum
 let theta2 = Math.PI / 2; // initial angle of the second pendulum
 let omega1 = 0; // initial angular velocity of the first pendulum
 let omega2 = 0; // initial angular velocity of the second pendulum
-const length1 = 200; // length of the first pendulum
-const length2 = 200; // length of the second pendulum
-const mass1 = 20; // mass of the first pendulum
-const mass2 = 20; // mass of the second pendulum
+let length1 = 200; // length of the first pendulum
+let length2 = 200; // length of the second pendulum
+let mass1 = 20; // mass of the first pendulum
+let mass2 = 20; // mass of the second pendulum
 
 const resetButton = document.getElementById('resetButton');
 resetButton.addEventListener('click', resetSimulation);
+
+// Add the event listeners for the sliders
+document.getElementById('theta1Slider').addEventListener('input', function (event) {
+  theta1 = degToRad(Number(event.target.value));
+});
+
+document.getElementById('theta2Slider').addEventListener('input', function (event) {
+  theta2 = degToRad(Number(event.target.value));
+});
+
+document.getElementById('omega1Slider').addEventListener('input', function (event) {
+  omega1 = Number(event.target.value);
+});
+
+document.getElementById('omega2Slider').addEventListener('input', function (event) {
+  omega2 = Number(event.target.value);
+});
+
+document.getElementById('length1Slider').addEventListener('input', function (event) {
+  length1 = Number(event.target.value);
+});
+
+document.getElementById('length2Slider').addEventListener('input', function (event) {
+  length2 = Number(event.target.value);
+});
+
+document.getElementById('mass1Slider').addEventListener('input', function (event) {
+  mass1 = Number(event.target.value);
+});
+
+document.getElementById('mass2Slider').addEventListener('input', function (event) {
+  mass2 = Number(event.target.value);
+});
 
 // Add the resetSimulation function
 function resetSimulation() {
@@ -25,6 +58,15 @@ function resetSimulation() {
   theta2 = Math.PI / 2;
   omega1 = 0;
   omega2 = 0;
+  // Update the slider values to match the reset values
+  document.getElementById('theta1Slider').value = radToDeg(theta1);
+  document.getElementById('theta2Slider').value = radToDeg(theta2);
+  document.getElementById('omega1Slider').value = omega1;
+  document.getElementById('omega2Slider').value = omega2;
+  document.getElementById('length1Slider').value = length1;
+  document.getElementById('length2Slider').value = length2;
+  document.getElementById('mass1Slider').value = mass1;
+  document.getElementById('mass2Slider').value = mass2;
 }
 
 function drawPendulum(x, y, angle, length, mass) {
@@ -47,9 +89,18 @@ function update() {
   const numerator1 =
     -g * (2 * mass1 + mass2) * Math.sin(theta1) -
     mass2 * g * Math.sin(theta1 - 2 * theta2) -
-    2 * Math.sin(theta1 - theta2) * mass2 * (omega2 * omega2 * length2 + omega1 * omega1 * length1 * Math.cos(theta1 - theta2));
+    2 *
+      Math.sin(theta1 - theta2) *
+      mass2 *
+      (omega2 * omega2 * length2 +
+        omega1 * omega1 * length1 * Math.cos(theta1 - theta2));
   const denominator1 = length1 * (2 * mass1 + mass2 - mass2 * Math.cos(2 * theta1 - 2 * theta2));
-  const numerator2 = 2 * Math.sin(theta1 - theta2) * (omega1 * omega1 * length1 * (mass1 + mass2) + g * (mass1 + mass2) * Math.cos(theta1) + omega2 * omega2 * length2 * mass2 * Math.cos(theta1 - theta2));
+  const numerator2 =
+    2 *
+    Math.sin(theta1 - theta2) *
+    (omega1 * omega1 * length1 * (mass1 + mass2) +
+      g * (mass1 + mass2) * Math.cos(theta1) +
+      omega2 * omega2 * length2 * mass2 * Math.cos(theta1 - theta2));
   const denominator2 = length2 * (2 * mass1 + mass2 - mass2 * Math.cos(2 * theta1 - 2 * theta2));
 
   const alpha1 = numerator1 / denominator1;
@@ -69,6 +120,16 @@ function update() {
   drawPendulum(pendulum2X, pendulum2Y, theta2, length2, mass2);
 
   requestAnimationFrame(update);
+}
+
+// Utility function to convert degrees to radians
+function degToRad(degrees) {
+  return (degrees * Math.PI) / 180;
+}
+
+// Utility function to convert radians to degrees
+function radToDeg(radians) {
+  return (radians * 180) / Math.PI;
 }
 
 update();

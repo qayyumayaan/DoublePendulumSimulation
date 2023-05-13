@@ -60,15 +60,18 @@ function resetSimulation() {
   theta2 = Math.PI / 2;
   omega1 = 0;
   omega2 = 0;
-  // Update the slider values to match the reset values
-  document.getElementById('theta1Slider').value = radToDeg(theta1);
-  document.getElementById('theta2Slider').value = radToDeg(theta2);
-  document.getElementById('omega1Slider').value = omega1;
-  document.getElementById('omega2Slider').value = omega2;
-  document.getElementById('length1Slider').value = length1;
-  document.getElementById('length2Slider').value = length2;
-  document.getElementById('mass1Slider').value = mass1;
-  document.getElementById('mass2Slider').value = mass2;
+
+  // Update the simulation values based on the current slider values
+  length1 = Number(document.getElementById('length1Slider').value);
+  length2 = Number(document.getElementById('length2Slider').value);
+  mass1 = Number(document.getElementById('mass1Slider').value);
+  mass2 = Number(document.getElementById('mass2Slider').value);
+
+  // Clear the canvas
+  ctx.clearRect(0, 0, width, height);
+
+  // Reset the simulation with the updated values
+  update();
 }
 
 function drawPendulum(x, y, angle, length, mass) {
@@ -87,8 +90,8 @@ function drawPendulum(x, y, angle, length, mass) {
   ctx.fill();
 }
 
-function update() {
 
+function update() {
   const numerator1 =
     -g * (2 * mass1 + mass2) * Math.sin(theta1) -
     mass2 * g * Math.sin(theta1 - 2 * theta2) -
@@ -124,27 +127,6 @@ function update() {
 
   requestAnimationFrame(update);
 }
-
-function resetSimulation() {
-  // Reset the pendulum angles and angular velocities to their initial values
-  theta1 = Math.PI / 2;
-  theta2 = Math.PI / 2;
-  omega1 = 0;
-  omega2 = 0;
-
-  // Update the simulation values based on the current slider values
-  length1 = Number(document.getElementById('length1Slider').value);
-  length2 = Number(document.getElementById('length2Slider').value);
-  mass1 = Number(document.getElementById('mass1Slider').value);
-  mass2 = Number(document.getElementById('mass2Slider').value);
-
-  // Clear the canvas
-  ctx.clearRect(0, 0, width, height);
-
-  // Reset the simulation with the updated values
-  update();
-}
-
 
 // Utility function to convert degrees to radians
 function degToRad(degrees) {

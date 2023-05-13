@@ -42,6 +42,18 @@
       <label for="mass2Slider">Mass 2:</label>
       <input type="range" id="mass2Slider">
     </div>
+
+    <div>
+      <label for="speedSlider">Simulation Speed:</label>
+      <input type="range" id="speedSlider">
+    </div>
+
+    <div>
+      <label for="timeStep">Time Step:</label>
+      <input type="range" id="timeStep">
+    </div>
+    
+    
     
     <script>
       // Configuration object with parameter values
@@ -89,6 +101,18 @@
           defaultValue: 20,
         },
         mass2: {
+          min: 10,
+          max: 50,
+          step: 1,
+          defaultValue: 20,
+        },
+        speedSlider: {
+          min: 10,
+          max: 50,
+          step: 1,
+          defaultValue: 20,
+        },
+        timeStep: {
           min: 10,
           max: 50,
           step: 1,
@@ -159,6 +183,14 @@
         step: parameters.mass2.step,
         value: parameters.mass2.defaultValue,
       });
+
+      setAttributes(document.getElementById("speedSlider"), {
+        min: parameters.mass2.min,
+        max: parameters.mass2.max,
+        step: parameters.mass2.step,
+        value: parameters.mass2.defaultValue,
+      });
+
     </script>
     <button id="resetButton">Reset</button>
     <script src="script.js"></script>

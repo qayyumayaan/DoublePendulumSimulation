@@ -71,6 +71,4 @@ function update() {
   requestAnimationFrame(update);
 }
 
-  
-  update();
-  
+update();

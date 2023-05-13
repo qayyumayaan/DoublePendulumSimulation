@@ -15,6 +15,18 @@ const length2 = 200; // length of the second pendulum
 const mass1 = 20; // mass of the first pendulum
 const mass2 = 20; // mass of the second pendulum
 
+const resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', resetSimulation);
+
+// Add the resetSimulation function
+function resetSimulation() {
+  // Reset the pendulum angles and angular velocities to their initial values
+  theta1 = Math.PI / 2;
+  theta2 = Math.PI / 2;
+  omega1 = 0;
+  omega2 = 0;
+}
+
 function drawPendulum(x, y, angle, length, mass) {
   const endX = x + length * Math.sin(angle);
   const endY = y + length * Math.cos(angle);

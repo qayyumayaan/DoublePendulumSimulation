@@ -32,51 +32,47 @@
         <div class="col-lg-6">
           <h1>Double Pendulum Simulation</h1>
           <canvas id="canvas" width="800" height="600"></canvas>
+
+          <label for="theta1Slider">Theta 1:</label>
+          <input type="range" class="form-range" id="theta1Slider">
+
+          <label for="theta1Slider">Theta 1:</label>
+          <input type="range" class="form-range" id="theta1Slider">
+
+          <label for="theta2Slider">Theta 2:</label>
+          <input type="range" class="form-range" id="theta2Slider">
+
+          <label for="omega1Slider">Omega 1:</label>
+          <input type="range" class="form-range" id="omega1Slider">
+
+          <label for="omega2Slider">Omega 2:</label>
+          <input type="range" class="form-range" id="omega2Slider">
+
+          <label for="length1Slider">Length 1:</label>
+          <input type="range" class="form-range" id="length1Slider">
+
+          <label for="length2Slider">Length 2:</label>
+          <input type="range" class="form-range" id="length2Slider">
+
+          <label for="mass1Slider">Mass 1:</label>
+          <input type="range" class="form-range" id="mass1Slider">
+
+          <label for="mass2Slider">Mass 2:</label>
+          <input type="range" class="form-range" id="mass2Slider">
+
+          <label for="timeStep">Time Step:</label>
+          <input type="range" class="form-range" id="timeStep">
+
+          <script src="parameters.js"></script>
+          <button id="resetButton">Reset</button>
+          <script src="script.js"></script>
+          <p>Here is a simple simulation of a double pendulum, with the goal of demonstrating chaos. </p>
+          <p>If you encounter any unexpected behavior, use the reset button or refresh the page. </p>
+          <p>Check out some of my other work: <a href ="https://qayyumayaan.github.io/chess-bot">Chess Bot</a>, <a href ="https://qayyumayaan.github.io/sudoku-solver">Sudoku Solver</a>, <a href="https://qayyumayaan.github.io/webgpu/">Conway's Game of Life in WebGPU</a>.</p>
+          
         </div>
       </div>
     </div>
-    <div>
-      <label for="theta1Slider">Theta 1:</label>
-      <input type="range" class="form-range" id="theta1Slider">
-    </div>
-    <div>
-      <label for="theta2Slider">Theta 2:</label>
-      <input type="range" class="form-range" id="theta2Slider">
-    </div>
-    <div>
-      <label for="omega1Slider">Omega 1:</label>
-      <input type="range" class="form-range" id="omega1Slider">
-    </div>
-    <div>
-      <label for="omega2Slider">Omega 2:</label>
-      <input type="range" class="form-range" id="omega2Slider">
-    </div>
-    <div>
-      <label for="length1Slider">Length 1:</label>
-      <input type="range" class="form-range" id="length1Slider">
-    </div>
-    <div>
-      <label for="length2Slider">Length 2:</label>
-      <input type="range" class="form-range" id="length2Slider">
-    </div>
-    <div>
-      <label for="mass1Slider">Mass 1:</label>
-      <input type="range" class="form-range" id="mass1Slider">
-    </div>
-    <div>
-      <label for="mass2Slider">Mass 2:</label>
-      <input type="range" class="form-range" id="mass2Slider">
-    </div>
-    <div>
-      <label for="timeStep">Time Step:</label>
-      <input type="range" class="form-range" id="timeStep">
-    </div>
-    
-    <script src="parameters.js"></script>
-    <button id="resetButton">Reset</button>
-    <script src="script.js"></script>
-    <p>Here is a simple simulation of a double pendulum, with the goal of demonstrating chaos. </p>
-    <p>If you encounter any unexpected behavior, use the reset button or refresh the page. </p>
-    <p>Check out some of my other work: <a href ="https://qayyumayaan.github.io/chess-bot">Chess Bot</a>, <a href ="https://qayyumayaan.github.io/sudoku-solver">Sudoku Solver</a>, <a href="https://qayyumayaan.github.io/webgpu/">Conway's Game of Life in WebGPU</a>.</p>
+ 
   </body>
 </html>

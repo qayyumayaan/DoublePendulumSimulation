@@ -38,36 +38,60 @@
               width: 200px; /* Adjust the width as per your preference */
             }
           </style>
-
-          <label for="theta1Slider">Theta 1:</label>
-          <input type="range" class="form-range custom-slider" id="theta1Slider">
-
-          <label for="theta1Slider">Theta 1:</label>
-          <input type="range" class="form-range custom-slider" id="theta1Slider">
-
-          <label for="theta2Slider">Theta 2:</label>
-          <input type="range" class="form-range custom-slider" id="theta2Slider">
-
-          <label for="omega1Slider">Omega 1:</label>
-          <input type="range" class="form-range custom-slider" id="omega1Slider">
-
-          <label for="omega2Slider">Omega 2:</label>
-          <input type="range" class="form-range custom-slider" id="omega2Slider">
-
-          <label for="length1Slider">Length 1:</label>
-          <input type="range" class="form-range custom-slider" id="length1Slider">
-
-          <label for="length2Slider">Length 2:</label>
-          <input type="range" class="form-range custom-slider" id="length2Slider">
-
-          <label for="mass1Slider">Mass 1:</label>
-          <input type="range" class="form-range custom-slider" id="mass1Slider">
-
-          <label for="mass2Slider">Mass 2:</label>
-          <input type="range" class="form-range custom-slider" id="mass2Slider">
-
-          <label for="timeStep">Time Step:</label>
-          <input type="range" class="form-range custom-slider" id="timeStep">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <label for="theta1Slider">Theta 1:</label>
+                <input type="range" class="form-range custom-slider" id="theta1Slider">
+              </div>
+              <div class="col-sm">
+                <label for="theta2Slider">Theta 2:</label>
+                <input type="range" class="form-range custom-slider" id="theta2Slider">
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-sm">
+                <label for="omega1Slider">Omega 1:</label>
+                <input type="range" class="form-range custom-slider" id="omega1Slider">
+              </div>
+              <div class="col-sm">
+                <label for="omega2Slider">Omega 2:</label>
+                <input type="range" class="form-range custom-slider" id="omega2Slider">
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-sm">
+                <label for="length1Slider">Length 1:</label>
+                <input type="range" class="form-range custom-slider" id="length1Slider">
+              </div>
+              <div class="col-sm">
+                <label for="length2Slider">Length 2:</label>
+                <input type="range" class="form-range custom-slider" id="length2Slider">
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-sm">
+                <label for="mass1Slider">Mass 1:</label>
+                <input type="range" class="form-range custom-slider" id="mass1Slider">
+              </div>
+              <div class="col-sm">
+                <label for="mass2Slider">Mass 2:</label>
+                <input type="range" class="form-range custom-slider" id="mass2Slider">
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-sm">
+                <label for="timeStep">Time Step:</label>
+                <input type="range" class="form-range custom-slider" id="timeStep">
+              </div>
+            </div>
+          </div>
+          
 
           <script src="parameters.js"></script>
           <button id="resetButton">Reset</button>

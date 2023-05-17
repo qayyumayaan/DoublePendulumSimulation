@@ -17,7 +17,6 @@
         }
     </style>
     <title>Ayaan's Double Pendulum Simulation</title>
-    <h1>Double Pendulum Simulation</h1>
     <style>
       canvas {
         border: 1px solid black;
@@ -28,7 +27,14 @@
     <script src="https://unpkg.com/petite-vue" defer init></script>
   </head>
   <body>
-    <canvas id="canvas" width="800" height="600"></canvas>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h1>Double Pendulum Simulation</h1>
+          <canvas id="canvas" width="800" height="600"></canvas>
+        </div>
+      </div>
+    </div>
     <div>
       <label for="theta1Slider">Theta 1:</label>
       <input type="range" class="form-range" id="theta1Slider">
